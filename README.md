@@ -11,3 +11,9 @@ The code loads training and test data containing various physical parameters (th
 | Input  | Prediction |
 |--------|-----------|
 | ![Input](./images/1.png) | ![Prediction](./images/2.png) |
+
+## Flow Chart
+
+<p align="center">
+  <img src="./images/fire.png" >
+</p>
