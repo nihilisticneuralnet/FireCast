@@ -1,12 +1,13 @@
 # **FireCast**: Wildfire Spread Prediction
 
-**Abstract**: This code implements a spatiotemporal prediction model for a flame propagation prediction challenge in [2024 FLAME AI Challenge *(Kaggle Competition)*](https://www.kaggle.com/competitions/2024-flame-ai-challenge). The code loads training and test data containing various physical parameters (theta, ustar, xi_f, etc.) related to flame propagation. It processes this data by stacking and normalizing different features, creating sequences where each input has 6 time steps to predict the next 20 time steps. The model uses ConvLSTM (Convolutional Long Short-Term Memory) architecture from the OpenSTL library, which is specifically designed for spatiotemporal learning tasks. The data is split into training and validation sets, processed in batches, and the model is trained for 12 epochs. After training, the model makes predictions on the test set, and the results are formatted into a submission file. The model essentially learns to predict how the flame will propagate over time based on initial conditions and physical parameters.
+**Abstract**: *This code is the solution implements a spatiotemporal prediction model for a flame propagation prediction challenge in [2024 FLAME AI Challenge *(Kaggle Competition)*](https://www.kaggle.com/competitions/2024-flame-ai-challenge) which ranked 47th out of 178 teams . 
 
-## Description
-### Goal of the Competition
-Participants in this Kaggle challenge will be provided with a high-fidelity dataset containing 2D wildfire flowfield data of wind speed (ustar), temperature (theta), and fire-line location (xi). To describe each case globally, we are also providing information about the slope (alpha) and mean wind speed (u10) -- both being scalar values, and are commonly used in the wildfire community to parameterize wildfire-spread behavior.
+The code loads training and test data containing various physical parameters (theta, ustar, xi_f, etc.) related to flame propagation. It processes this data by stacking and normalizing different features, creating sequences where each input has 6 time steps to predict the next 20 time steps. The model uses ConvLSTM (Convolutional Long Short-Term Memory) architecture from the OpenSTL library, which is specifically designed for spatiotemporal learning tasks. The data is split into training and validation sets, processed in batches, and the model is trained for 12 epochs. After training, the model makes predictions on the test set, and the results are formatted into a submission file. The model essentially learns to predict how the flame will propagate over time based on initial conditions and physical parameters, and thus a **MSE of 0.01215** across diverse conditions.
 
-Your task is to develop a state-of-the-art spatio-temporal ML model that can accurately forecast the 2D fire propagation as a function of time. The challenge consists in capturing the complex dynamics of wildfire spread that is affected by factors such as wind speed, terrain, and atmospheric turbulence. Your model should not only predict the instantaneous fire-line but also account for temporal variations, ensuring that forecasts remain robust and reliable over extended time periods. This will be critical for enhancing wildfire management and fire prevention strategies. To add interpretability, we encourage you to consider infusing physical information into your ML model.
+## Plots
 
-The objective is to develop an auto-regressive ML model that predicts the fire-line location (xi) at a time t+1, using 2D information of wind field, potential temperature, and fire line at previous and current time ≤ t. While the primary evaluation focuses on your model’s predictions for the fire-line location, you are encouraged to leverage all the provided information for improved accuracy.
+#### Prediction
 
+| Input  | Prediction |
+|--------|-----------|
+| ![Input](./images/1.png) | ![Prediction](./images/2.png) |
